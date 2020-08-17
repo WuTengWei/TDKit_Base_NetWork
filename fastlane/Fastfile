@@ -1,0 +1,60 @@
+#################################################################
+# fastlane upgradePrivateSpec tag:0.1.0 specName:TDKit_Base_NetWork repo:RocedarPodSpecs
+
+
+desc "通过 upgradePrivateSpec 可以快速的对远程私有库完成升级工作"
+lane :upgradePrivateSpec do |options|
+
+#外界输入的tag标签的值
+tagName = options[:tag]
+
+# 输入的podspec的名字
+specName = options[:specName]
+
+# 输入的 repo name
+repoName = options[:repo]
+
+podspecPath = "#{specName}.podspec"
+
+#具体在这个文件上执行哪些行为
+
+# 1、git pull
+git_pull
+
+# 2、pod install
+#cocoapods(
+#clean: true,
+#podfile: "./Example/Podfile"
+#)
+
+# 3、git add .
+
+git_add(path: ".")
+
+#  git commit -m 'message'
+
+git_commit(path: ".", message: "Version Bump")
+
+#  git push origin master
+
+push_to_git_remote
+
+# 4、git tag ...
+
+add_git_tag(
+tag: tagName
+)
+
+#    git push --tags
+
+push_git_tags
+
+# 5、pod spec lint 检测当前spec的格式
+
+pod_lib_lint(allow_warnings: true)
+
+#    pod repo push XXX  xxxx.podspec
+
+pod_push(path: podspecPath, repo: repoName, allow_warnings:true)
+
+end
