@@ -289,12 +289,10 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TDKit_Base_NetWork_Example/Pods-TDKit_Base_NetWork_Example-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/TDKit_Base_NetWork/TDKit_Base_NetWork.bundle",
-				"${PODS_ROOT}/../../TDKit_Base_NetWork/AliPay/AlipaySDK.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TDKit_Base_NetWork.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AlipaySDK.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

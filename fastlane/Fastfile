@@ -22,10 +22,11 @@ podspecPath = "#{specName}.podspec"
 git_pull
 
 # 2、pod install
-#cocoapods(
-#clean: true,
-#podfile: "./Example/Podfile"
-#)
+cocoapods(
+clean: true,
+podfile: "./Example/Podfile",
+use_bundle_exec: false
+)
 
 # 3、git add .
 
