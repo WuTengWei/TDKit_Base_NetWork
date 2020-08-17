@@ -1,0 +1,13 @@
+use_frameworks!
+
+target 'TDKit_Base_NetWork_Example' do
+  pod 'TDKit_Base_NetWork', :path => '../'
+  pod 'TDKit_Base_NetWork/WeChatPay',:path=>'../'
+  pod 'TDKit_Base_NetWork/AliPay',:path=>'../'
+
+  target 'TDKit_Base_NetWork_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
