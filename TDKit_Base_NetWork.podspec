@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TDKit_Base_NetWork'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of TDKit_Base_NetWork.'
   s.description      = <<-DESC
   Add long description of the pod here.
